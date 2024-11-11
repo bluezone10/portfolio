@@ -88,6 +88,19 @@ body {
 #socialIcon:hover {
     scale: 1.1;
 }
+
+.projectSection {
+    padding-left: 10%; padding-right: 10%;
+    padding-top: 5%; padding-bottom: 5%;
+}
+
+#projectContainer {
+    transition: 0.25s ease-out;
+}
+
+#projectContainer:hover {
+    scale: 1.1;
+}
 /** For tablet devices **/
 @media (min-width: 768px) and (max-width: 1023px) {
     .custom-shape-divider-top-1731313661 svg {
