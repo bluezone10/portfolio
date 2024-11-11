@@ -1,0 +1,149 @@
+body {
+    background-color: whitesmoke;
+}
+
+.contactTopContainer {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    background-color: gainsboro;
+}
+
+#buttonContainer a {
+    text-decoration: none;
+    font-size: 2.5vh;
+    font-family: 'Lato', sans-serif;
+    color: white;
+    transition: 0.25s ease-out;
+    font-weight: bold;
+}
+
+#buttonContainer a:hover {
+    scale: 1.1;
+}
+
+/* Bubble Style */
+#bubbleFloat {
+    position: fixed;
+    background-color: #6c757d; /* Bubble color */
+    border-radius: 50%;
+    height: 5vh;
+    width: 5vh;
+    transition: 3s; /* Smooth transition for position */
+    z-index: -1;
+}
+
+.custom-shape-divider-top-1731313661 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1731313661 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 47px;
+}
+
+.custom-shape-divider-top-1731313661 .shape-fill {
+    fill: #FFFFFF;
+}
+
+#skillsContent {
+    width: 50%;
+}
+
+.skillsContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.bodySection {
+    margin-top: 0%;
+}
+
+#introContainer {
+    width: 50%;
+    max-width: 50%;
+}
+
+#burgerIcon:hover {
+    scale: 1.1;
+}
+
+#vuePercent {
+    right: 75%;
+}
+
+#socialIcon {
+    cursor: pointer;
+}
+
+#socialIcon:hover {
+    scale: 1.1;
+}
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1023px) {
+    .custom-shape-divider-top-1731313661 svg {
+        width: calc(100% + 1.3px);
+        height: 50px;
+    }
+
+    #skillsContent {
+        width: 100%;
+    }
+
+    .skillsContainer {
+        flex-direction: column-reverse;
+    }
+
+    .bodySection {
+        margin-top: 5vh;
+    }
+
+    #introContainer {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+    .custom-shape-divider-top-1731313661 svg {
+        width: calc(100% + 1.3px);
+        height: 22px;
+    }
+
+    #skillsContent {
+        width: 100%;
+    }
+
+    .skillsContainer {
+        flex-direction: column;
+    }
+
+    .bodySection {
+        gap: 10px; 
+        margin-top: 15vh;
+        flex-direction: column-reverse;
+    }
+
+    #introContainer {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #introContainer h3 {
+        text-align: center;
+    }
+
+    #vuePercent {
+        right: 0;
+    }
+}
