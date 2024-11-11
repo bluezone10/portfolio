@@ -14,15 +14,43 @@ $userIP = $_SERVER['REMOTE_ADDR'];
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="CSS/index.css">
+    <style>
+        .contactContainer {
+            position: absolute;
+            left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%; height: 65vh;
+            z-index: 2;
+            background-color: whitesmoke;
+            display: flex;
+        }
+
+        .contactImage {
+            width: 50%;
+            height: 100%;
+        }
+
+        .project-card {
+            transition: 0.25s ease-out;
+        }
+
+        .project-card:hover {
+            scale: 1.1;
+        }
+
+        .contactFormContainer {
+            width: 50%;
+        }
+    </style>
 </head>
 
 <body class="bg-light">
     <div class="contactTopContainer position-absolute ps-2 pe-2 d-flex align-items-center justify-content-between">
         <p class="m-0">+63-97569262625 / +63-9917166453</p>
         <div class="d-flex gap-2">
-            <i id="socialIcon" title="Facebook" class="bi bi-facebook" style="font-size: 3vh"></i>
-            <i id="socialIcon" title="Github" class="bi bi-github" style="font-size: 3vh"></i>
-            <i id="socialIcon" title="LinkedIn" class="bi bi-linkedin" style="font-size: 3vh"></i>
+            <i id="socialIcon" title="Facebook" class="bi bi-facebook" onclick="goToLink('https://www.facebook.com/angeloyam223')" class="bi bi-facebook" style="font-size: 3vh"></i>
+            <i id="socialIcon" title="Github" class="bi bi-github" onclick="goToLink('https://github.com/bluezone10')" style="font-size: 3vh"></i>
+            <i id="socialIcon" title="LinkedIn" class="bi bi-linkedin" onclick="goToLink('https://www.linkedin.com/in/angelo-castro-315610332')" style="font-size: 3vh"></i>
         </div>
     </div>
     <section class="navigation">
@@ -35,8 +63,39 @@ $userIP = $_SERVER['REMOTE_ADDR'];
                 style="cursor: pointer; font-size: 5vh"></i>
         </div>
     </section>
-    <section class="">
-
+    <section class="contactSection position-fixed w-100" style="z-index: 1001; display: none; z-index: 1; height: 100vh; top: 0; left: 0">
+        <div class="position-absolute bg-dark w-100" style="opacity: 0.5; z-index: 1; left: 0; top: 0; height: 100vh;"></div>
+        <div class="contactContainer" style="z-index: 1000">
+            <i class="position-absolute bi bi-x text-danger" onclick="$('.contactSection').hide()" style="right: 0; cursor: pointer; top: -5px; font-size: 5vh"></i>
+            <div class="contactImage">
+                <img src="IMAGE/contact.jpg" class="img-fluid w-100 h-100" alt="">
+            </div>
+            <div class="contactFormContainer p-4" style="overflow-y: auto"> 
+                <div class="w-100">
+                    <h5>EMAIL ME</h5>
+                    <hr>
+                </div>
+                <div>
+                    <form action="" class="d-flex flex-column gap-2">
+                        <div class="d-flex flex-column gap-1">
+                            <label for="">Email: </label>
+                            <input type="text" class="form-control" placeholder="Your email..." required>
+                        </div>
+                        <div class="d-flex flex-column gap-1">
+                            <label for="">Subject: </label>
+                            <input type="text" class="form-control" placeholder="Subject..." required>
+                        </div>
+                        <div class="d-flex flex-column gap-1">
+                            <label for="">Name: </label>
+                            <textarea name="" rows="6" class="form-control" placeholder="Your concern..." id="" required></textarea>
+                        </div>
+                        <div class="mt-2">
+                            <button class="w-100 btn btn-dark">SUBMIT</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </section>
     <section class="bodySection w-100 d-flex align-items-center justify-content-between"
         style="padding-left: 10%; padding-right: 10%; min-height: 100vh; padding-bottom: 5%">
@@ -56,7 +115,7 @@ $userIP = $_SERVER['REMOTE_ADDR'];
                 management. I am passionate about building innovative and user-friendly solutions, and I am eager to
                 apply my skills and knowledge in the field of technology. Welcome to my portfolio, where you can
                 explore my projects and achievements.</p>
-            <button id="contactButton" class="border pt-2 pb-2 ps-4 pe-4 bg-primary text-white">CONTACT ME</button>
+            <button id="contactButton" class="border pt-2 pb-2 ps-4 pe-4 bg-primary text-white" onclick="$('.contactSection').show()">CONTACT ME</button>
         </div>
         <div id="introContainer" class="d-flex align-items-center justify-content-center">
             <img src="IMAGE/self.png" class="w-100 h-100"
@@ -77,7 +136,7 @@ $userIP = $_SERVER['REMOTE_ADDR'];
                 <a href="" onclick="goToSection('bodySection')">HOME</a>
                 <a href="" onclick="goToSection('skillsSection')">SKILLS</a>
                 <a href="" onclick="goToSection('projectSection')">PROJECT</a>
-                <a href="" onclick="goToSection('contactSection')">CONTACT</a>
+                <a href="" onclick="goToSection('footerSection')">CONTACT</a>
             </div>
         </div>
     </section>
@@ -207,30 +266,33 @@ $userIP = $_SERVER['REMOTE_ADDR'];
                     </div>
             </div>
             <hr>
-            <div id="projectsContainer" class="w-100 d-flex flex-wrap justify-content-around" style="flex: 1">
-                <!-- <div id="projectContainer" class="border d-flex flex-column rounded shadow"
-                    style="width: 35vh; min-height: 30vh; height: fit-content">
-                    <img src="IMAGE/PROJECT/catering.png" class="w-100 img-fluid rounded" alt="">
-                    <div class="p-2 ps-4 pe-4">
-                        <h5 class="text-center">Ace Catering</h5>
-                        <hr>
-                        <p style="text-align: justify; font-size: 1.75vh">Ace Catering is an e-commerce website,
-                            where the user can book ahead of time, and choose their package for events.</p>
-                        <button class="btn btn-outline-dark btn-sm w-100 see-more">SEE MORE</button>
-                        <hr>
-                        <div class="d-flex justify-content-end gap-2">
-                            <div class="heart-container" data-project-id="project1">
-                                <i class="bi bi-heart text-dark" style="cursor: pointer"></i>
-                                <span class="heart-count">0</span>
-                            </div>
-                            <div class="view-container" data-project-id="project1">
-                                <i class="bi bi-eye text-dark" style="cursor: pointer"></i>
-                                <span class="view-count">0</span>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
+            <div id="projectsContainer" class="w-100 d-flex flex-wrap gap-2 justify-content-around" style="flex: 1">
+            
             </div>
+        </div>
+    </section>
+    <section class="footerSection position-relative bg-primary" style="padding-left: 10%; padding-right: 10%; height: 35vh">
+        <div class="position-absolute" style="font-size: 5vh; bottom: 10vh; right: 5vh">
+            <i class="bi bi-chevron-up" onclick="goToSection('bodySection')" style="cursor: pointer; padding-left: 1vh; padding-right: 1vh; border: solid 0.5vh black; "></i>
+        </div>
+        <div class="position-absolute text-dark text-center" style="padding-left: 5%; bottom: 2.5vh; right: 5vh">
+            Copyright 2024 All Right Reserve, Angelo Castro Portfolio
+        </div>
+        <div class="position-absolute text-dark d-flex gap-2" style="bottom: 2.5vh; left: 5vh">
+            <i id="socialIcon" title="Facebook" class="bi bi-facebook" onclick="goToLink('https://www.facebook.com/angeloyam223')" class="bi bi-facebook" style="font-size: 3vh"></i>
+            <i id="socialIcon" title="Github" class="bi bi-github" onclick="goToLink('https://github.com/bluezone10')" style="font-size: 3vh"></i>
+            <i id="socialIcon" title="LinkedIn" class="bi bi-linkedin" onclick="goToLink('https://www.linkedin.com/in/angelo-castro-315610332')" style="font-size: 3vh"></i>
+         </div>
+         <div class="w-100 d-flex align-items-center justify-content-center" style="height: 35vh"> 
+            <button class="btn btn-dark btn-lg" onclick="$('.contactSection').show()">CONTACT ME</button>
+         </div>
+        <div class="custom-shape-divider-top-1731313661">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    class="shape-fill"></path>
+            </svg>
         </div>
     </section>
 </body>
@@ -259,6 +321,10 @@ $userIP = $_SERVER['REMOTE_ADDR'];
         element.scrollIntoView({
             behavior: 'smooth'
         });
+    }
+
+    function goToLink(url) {
+        window.open(url, '_blank');
     }
 
     $(document).ready(function() {
@@ -293,7 +359,7 @@ $userIP = $_SERVER['REMOTE_ADDR'];
                             <h5 class="text-center">${project.name}</h5>
                             <hr>
                             <p style="text-align: justify; font-size: 1.75vh;">${project.description}</p>
-                            <button class="btn btn-outline-dark btn-sm w-100 see-more" data-id="${project.id}">SEE MORE</button>
+                            <button class="btn btn-outline-dark btn-sm w-100 see-more" data-id="${project.id}" onclick="window.location.href = 'project.php?name=${project.name}'">VIEW MORE</button>
                             <hr>
                             <div class="d-flex justify-content-end gap-2">
                                 <div>
@@ -311,7 +377,6 @@ $userIP = $_SERVER['REMOTE_ADDR'];
             });
             attachEventHandlers();
         }
-
 
         function attachEventHandlers() {
             $('.like-btn').on('click', function() {
