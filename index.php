@@ -359,7 +359,7 @@ $userIP = $_SERVER['REMOTE_ADDR'];
                             <h5 class="text-center">${project.name}</h5>
                             <hr>
                             <p style="text-align: justify; font-size: 1.75vh;">${project.description}</p>
-                            <button class="btn btn-outline-dark btn-sm w-100 see-more" data-id="${project.id}" onclick="window.location.href = 'project.php?name=${project.name}'">VIEW MORE</button>
+                            <button class="btn btn-outline-dark btn-sm w-100 see-more" data-id="${project.id}" onclick="window.location.href = 'project.html?name=${project.name}'">VIEW MORE</button>
                             <hr>
                             <div class="d-flex justify-content-end gap-2">
                                 <div>
