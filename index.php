@@ -13,35 +13,7 @@ $userIP = $_SERVER['REMOTE_ADDR'];
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="CSS/index.css">
-    <style>
-        .contactContainer {
-            position: absolute;
-            left: 50%; top: 50%;
-            transform: translate(-50%, -50%);
-            width: 60%; height: 65vh;
-            z-index: 2;
-            background-color: whitesmoke;
-            display: flex;
-        }
-
-        .contactImage {
-            width: 50%;
-            height: 100%;
-        }
-
-        .project-card {
-            transition: 0.25s ease-out;
-        }
-
-        .project-card:hover {
-            scale: 1.1;
-        }
-
-        .contactFormContainer {
-            width: 50%;
-        }
-    </style>
+    <link rel="stylesheet" href="CSS/indexs.css">
 </head>
 
 <body class="bg-light">
@@ -110,7 +82,7 @@ $userIP = $_SERVER['REMOTE_ADDR'];
         <div id="introContainer">
             <h3>Hi, I'm Angelo Castro a PHP Developer</h3>
             <p style="text-align: justify">I am a fresh graduate (Cum Laude) with a Bachelor of Science in
-                Information Technology from Cavite State University - Tanza Campus. Throughout my academic journey,
+                Information Technology from Cavite State University - Tanza Campus. I lived from Philippines General Trias Cavite. Throughout my academic journey,
                 I have gained a strong foundation in software development, web technologies, and database
                 management. I am passionate about building innovative and user-friendly solutions, and I am eager to
                 apply my skills and knowledge in the field of technology. Welcome to my portfolio, where you can
@@ -271,20 +243,22 @@ $userIP = $_SERVER['REMOTE_ADDR'];
             </div>
         </div>
     </section>
-    <section class="footerSection position-relative bg-primary" style="padding-left: 10%; padding-right: 10%; height: 35vh">
+    <section class="footerSection position-relative bg-dark" style="padding-left: 10%; padding-right: 10%; height: 35vh">
         <div class="position-absolute" style="font-size: 5vh; bottom: 10vh; right: 5vh">
-            <i class="bi bi-chevron-up" onclick="goToSection('bodySection')" style="cursor: pointer; padding-left: 1vh; padding-right: 1vh; border: solid 0.5vh black; "></i>
+            <i class="bi bi-chevron-up text-white" onclick="goToSection('bodySection')" style="cursor: pointer; padding-left: 1vh; padding-right: 1vh; border: solid 0.5vh black; "></i>
         </div>
-        <div class="position-absolute text-dark text-center" style="padding-left: 5%; bottom: 2.5vh; right: 5vh">
+        <div class="position-absolute text-white text-center" style="padding-left: 5%; bottom: 2.5vh; right: 5vh">
             Copyright 2024 All Right Reserve, Angelo Castro Portfolio
         </div>
-        <div class="position-absolute text-dark d-flex gap-2" style="bottom: 2.5vh; left: 5vh">
+        <div class="position-absolute text-white d-flex gap-2" style="bottom: 2.5vh; left: 5vh">
             <i id="socialIcon" title="Facebook" class="bi bi-facebook" onclick="goToLink('https://www.facebook.com/angeloyam223')" class="bi bi-facebook" style="font-size: 3vh"></i>
             <i id="socialIcon" title="Github" class="bi bi-github" onclick="goToLink('https://github.com/bluezone10')" style="font-size: 3vh"></i>
             <i id="socialIcon" title="LinkedIn" class="bi bi-linkedin" onclick="goToLink('https://www.linkedin.com/in/angelo-castro-315610332')" style="font-size: 3vh"></i>
          </div>
-         <div class="w-100 d-flex align-items-center justify-content-center" style="height: 35vh"> 
-            <button class="btn btn-dark btn-lg" onclick="$('.contactSection').show()">CONTACT ME</button>
+         <div class="w-100 d-flex align-items-center flex-column text-white justify-content-center" style="height: 35vh"> 
+            <p class="mb-0">Email: angelocastro2000@gmail.com</p>
+            <p class="mt-0">Contact: 09756926265</p>
+            <button class="btn btn-secondary btn-lg" onclick="$('.contactSection').show()">CONTACT ME</button>
          </div>
         <div class="custom-shape-divider-top-1731313661">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
@@ -359,6 +333,14 @@ $userIP = $_SERVER['REMOTE_ADDR'];
                             <h5 class="text-center">${project.name}</h5>
                             <hr>
                             <p style="text-align: justify; font-size: 1.75vh;">${project.description}</p>
+                            <div class="mt-2 mb-2">
+                                <img class="img-fluid" title="HTML 5" src="IMAGE/html.png" style="width: 25px; height: 25px">
+                                <img class="img-fluid" title="CSS 3" src="IMAGE/css.png" style="width: 25px; height: 25px">
+                                <img class="img-fluid" title="PHP" src="IMAGE/php.png" style="width: 25px; height: 25px">
+                                <img class="img-fluid" title="jQuery" src="IMAGE/jquery.png" style="width: 25px; height: 25px">
+                                <img class="img-fluid" title="JavaScript" src="IMAGE/javascript.png" style="width: 25px; height: 25px">
+                                <img class="img-fluid" title="Bootstrap 5" src="IMAGE/bootstrap.png" style="width: 30px; height: 25px">
+                            </div>
                             <button class="btn btn-outline-dark btn-sm w-100 see-more" data-id="${project.id}" onclick="window.location.href = 'project.html?name=${project.name}'">VIEW MORE</button>
                             <hr>
                             <div class="d-flex justify-content-end gap-2">
@@ -367,7 +349,7 @@ $userIP = $_SERVER['REMOTE_ADDR'];
                                     <span class="heart-count">${project.hearts}</span>
                                 </div>
                                 <div>
-                                    <i class="bi bi-eye text-dark" style="cursor: pointer"></i>
+                                    <i class="bi bi-eye text-dark"></i>
                                     <span class="view-count">${project.views}</span>
                                 </div>
                             </div>
