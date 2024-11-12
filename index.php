@@ -350,7 +350,7 @@ $userIP = $_SERVER['REMOTE_ADDR'];
                                 <img class="img-fluid" title="JavaScript" src="IMAGE/javascript.png" style="width: 25px; height: 25px">
                                 <img class="img-fluid" title="Bootstrap 5" src="IMAGE/bootstrap.png" style="width: 30px; height: 25px">
                             </div>
-                            <button class="btn btn-outline-dark btn-sm w-100 see-more" data-id="${project.id}" onclick="window.location.href = 'project.html?name=${project.name}'">VIEW MORE</button>
+                            <button class="btn btn-outline-dark btn-sm w-100 see-more" data-id="${project.id}" onclick="window.location.href = 'project.php?name=${project.name}'">VIEW MORE</button>
                             <hr>
                             <div class="d-flex justify-content-end gap-2">
                                 <div>
