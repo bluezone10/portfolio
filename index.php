@@ -204,6 +204,15 @@ $userIP = $_SERVER['REMOTE_ADDR'];
                         <div class="" style="background-color: #90EE90;width: 25%"></div>
                     </div>
                 </div>
+                <div class="text-white d-flex gap-2 flex-column" style="width: 100%">
+                    <div class="d-flex justify-content-between">
+                        <label for="">GitHub</label>
+                        <span class="position-relative" style="width: 30%">70%</span>
+                    </div>
+                    <div class="d-flex rounded-pill bg-secondary w-100" style="overflow: hidden; height: 2.5vh">
+                        <div class="" style="background-color: #90EE90;width: 70%"></div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="custom-shape-divider-top-1731313661">
