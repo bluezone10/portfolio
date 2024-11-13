@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $stmtInsert = $conn->prepare($sqlInsert);
             $stmtInsert->bind_param("is", $projectId, $userIp);
             $stmtInsert->execute();
-
+            
             // Increase heart count
             $sqlHeartCount = "UPDATE projects SET hearts = hearts + 1 WHERE id = ?";
             $stmtHeartCount = $conn->prepare($sqlHeartCount);
@@ -64,8 +64,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Close all prepared statements
- 
-   
 }
 
 $conn->close();
