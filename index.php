@@ -69,6 +69,31 @@ $userIP = $_SERVER['REMOTE_ADDR'];
             }
         }
 
+        .image-carousel {
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .image-track {
+            display: flex;
+            animation: scroll 10s linear infinite;
+        }
+
+        .image-track img {
+            flex: 0 0 auto;
+            margin-right: 20px; /* Adjust spacing between images */
+        }
+
+        @keyframes scroll {
+            from {
+                transform: translateX(0%);
+            }
+            to {
+                transform: translateX(-80.6%);
+            }
+        }
+
     </style>
 </head>
 
@@ -277,6 +302,38 @@ $userIP = $_SERVER['REMOTE_ADDR'];
                 </div>
             </div>
         </div>
+        <div class="w-100 d-flex gap-4 bg-secondary rounded mb-4 p-4 image-carousel" style="overflow: hidden; height: 15vh;">
+            <div class="image-track">
+                <img src="IMAGE/html.png" class="img-fluid h-100" alt="">
+                <img src="IMAGE/css1.png" class="img-fluid h-100" alt="">
+                <img src="IMAGE/javascript.png" class="img-fluid h-100" alt="">
+                <img src="IMAGE/php.png" class="img-fluid h-100" alt="">
+                <img src="IMAGE/jquery.png" class="img-fluid h-100" alt="">
+                <img src="IMAGE/mysql.png" class="img-fluid h-100" alt="">
+                <img src="IMAGE/laravel.png" class="img-fluid h-100" alt="">
+                <img src="IMAGE/react.png" class="img-fluid h-100" alt="">
+                <img src="IMAGE/vue.png" class="img-fluid h-100" alt="">
+                <img src="IMAGE/git.png" class="img-fluid h-100" alt="">
+                <!-- Duplicate images for seamless looping -->
+                <img src="IMAGE/html.png" class="img-fluid h-100" alt="">
+                <img src="IMAGE/css1.png" class="img-fluid h-100" alt="">
+                <img src="IMAGE/javascript.png" class="img-fluid h-100" alt="">
+                <img src="IMAGE/php.png" class="img-fluid h-100" alt="">
+                <img src="IMAGE/jquery.png" class="img-fluid h-100" alt="">
+                <img src="IMAGE/mysql.png" class="img-fluid h-100" alt="">
+                <img src="IMAGE/laravel.png" class="img-fluid h-100" alt="">
+                <img src="IMAGE/react.png" class="img-fluid h-100" alt="">
+                <img src="IMAGE/vue.png" class="img-fluid h-100" alt="">
+                <img src="IMAGE/git.png" class="img-fluid h-100" alt="">
+
+                <img src="IMAGE/html.png" class="img-fluid h-100" alt="">
+                <img src="IMAGE/css1.png" class="img-fluid h-100" alt="">
+                <img src="IMAGE/javascript.png" class="img-fluid h-100" alt="">
+                <img src="IMAGE/php.png" class="img-fluid h-100" alt="">
+                <img src="IMAGE/jquery.png" class="img-fluid h-100" alt="">
+            </div>
+        </div>
+
         <div class="custom-shape-divider-top-1731313661">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
                 preserveAspectRatio="none">
@@ -375,7 +432,7 @@ $userIP = $_SERVER['REMOTE_ADDR'];
     crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    const headingText = "Hi, I'm Angelo Castro a PHP Developer";
+    const headingText = "Hi, I'm Angelo Castro";
     const paragraphText = "I am a fresh graduate (Cum Laude) with a Bachelor of Science in Information Technology from Cavite State University - Tanza Campus. I lived from Philippines General Trias Cavite. Throughout my academic journey, I have gained a strong foundation in software development, web technologies, and database management. I am passionate about building innovative and user-friendly solutions, and I am eager to apply my skills and knowledge in the field of technology. Welcome to my portfolio, where you can explore my projects and achievements.";
 
     function typeText(element, text, speed, callback) {
@@ -525,7 +582,7 @@ $userIP = $_SERVER['REMOTE_ADDR'];
                             <p style="text-align: justify; font-size: 1.75vh;">${project.description}</p>
                             <div class="mt-2 mb-2">
                                 <img class="img-fluid" title="HTML 5" src="IMAGE/html.png" style="width: 25px; height: 25px">
-                                <img class="img-fluid" title="CSS 3" src="IMAGE/css.png" style="width: 25px; height: 25px">
+                                <img class="img-fluid" title="CSS 3" src="IMAGE/css1.png" style="width: 25px; height: 25px">
                                 <img class="img-fluid" title="PHP" src="IMAGE/php.png" style="width: 25px; height: 25px">
                                 <img class="img-fluid" title="jQuery" src="IMAGE/jquery.png" style="width: 25px; height: 25px">
                                 <img class="img-fluid" title="JavaScript" src="IMAGE/javascript.png" style="width: 25px; height: 25px">

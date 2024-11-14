@@ -15,6 +15,13 @@
         $tech = explode(", ", $data['language']);
     } 
 
+    if($name == "Ace Catering") {
+        $link = "CATERING";
+    } else if($name == "Capstone Management") {
+        $link = "CAPSTONE";
+    } else {
+        $link = "57COMMERCIAL";
+    }
     $gallery = mysqli_query($conn, "SELECT * FROM gallery WHERE gallery_id='$projectID'");
 ?>
 <!DOCTYPE html>
@@ -173,7 +180,7 @@
             <div class="w-50 p-4 d-flex align-items-center flex-column justify-content-center" style="height: 60vh">
                 <h3><?= $name ?></h3>
                 <p><?= $description ?></p>
-                <button class="btn btn-dark" onclick="$('#warningModal').show()">LIVE DEMO</button>
+                <button class="btn btn-dark" onclick="window.location.href = 'LIVE-DEMO/<?= $link ?>'">LIVE DEMO</button>
             </div>
         </div>
         <hr>
@@ -187,7 +194,7 @@
                 </div>
                 <div class="d-flex flex-column align-items-center justify-content-center" style="">
                     <h5 class="text-center">CSS 3</h5>
-                    <img src="IMAGE/css.png" class="img-fluid" style="width: 10vh;" alt="">
+                    <img src="IMAGE/css1.png" class="img-fluid" style="width: 10vh;" alt="">
                     <p class="mt-2 text-center" style="font-size: 1.75vh; width: 20vh">I used CSS 3 for the website design</p>
                 </div>
                 <div class="d-flex flex-column align-items-center justify-content-center" style="">
